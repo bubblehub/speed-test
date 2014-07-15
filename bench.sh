@@ -24,7 +24,6 @@ linodejp=$( wget -O /dev/null http://speedtest.tokyo.linode.com/100MB-tokyo.bin 
 echo "Download speed from Linode, Tokyo, JP: $linodejp "
 i3d=$( wget -O /dev/null http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from i3d.net, Rotterdam, NL: $i3d"
-
 linodeuk=$( wget -O /dev/null http://speedtest.london.linode.com/100MB-london.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from Linode, London, UK: $linodeuk "
 leaseweb=$( wget -O /dev/null http://mirror.leaseweb.com/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
@@ -39,8 +38,6 @@ slwdc=$( wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10
 echo "Download speed from Softlayer, Washington, DC: $slwdc "
 ovhfr=$( wget -O /dev/null http://proof.ovh.net/files/100Mio.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from OVH, Paris, France: $ovhfr "
-smrtdc=$( wget -O /dev/null http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-echo "Download speed from SmartDC, Rotterdam, Netherlands: $smrtdc "
 hetzger=$( wget -O /dev/null http://hetzner.de/100MB.iso 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from Hetzner, Nuernberg, Germany: $hetzger "
 inetau=$( wget -O /dev/null http://ftp.iinet.net.au/test100MB.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )

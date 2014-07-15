@@ -25,8 +25,8 @@ echo "Download speed from Linode, Tokyo, JP: $linodejp "
 i3d=$( wget -O /dev/null http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from i3d.net, Rotterdam, NL: $i3d"
 
-#linodeuk=$( wget -O /dev/null http://speedtest.london.linode.com/100MB-london.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-#echo "Download speed from Linode, London, UK: $linodeuk "
+linodeuk=$( wget -O /dev/null http://speedtest.london.linode.com/100MB-london.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from Linode, London, UK: $linodeuk "
 leaseweb=$( wget -O /dev/null http://mirror.leaseweb.com/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from Leaseweb, Haarlem, NL: $leaseweb "
 slsg=$( wget -O /dev/null http://speedtest.sng01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
@@ -37,5 +37,25 @@ slsjc=$( wget -O /dev/null http://speedtest.sjc01.softlayer.com/downloads/test10
 echo "Download speed from Softlayer, San Jose, CA: $slsjc "
 slwdc=$( wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from Softlayer, Washington, DC: $slwdc "
+ovhfr=$( wget -O /dev/null http://proof.ovh.net/files/100Mio.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from OVH, Paris, France: $ovhfr "
+smrtdc=$( wget -O /dev/null http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from SmartDC, Rotterdam, Netherlands: $smrtdc "
+hetzger=$( wget -O /dev/null http://hetzner.de/100MB.iso 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from Hetzner, Nuernberg, Germany: $hetzger "
+inetau=$( wget -O /dev/null http://ftp.iinet.net.au/test100MB.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from iiNet, Perth, WA, Australia: $inetau "
+mamvps=$( wget -O /dev/null http://www.mammothvpscustomer.com/test100MB.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from MammothVPS, Sydney, Australia: $mamvps "
+mamvps=$( wget -O /dev/null http://www.mammothvpscustomer.com/test100MB.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from MammothVPS, Sydney, Australia: $mamvps "
+lwman=$( wget -O /dev/null http://mirror.us.leaseweb.net/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from Leaseweb, Manassas, VA, USA: $lwman "
+promrom=$( wget -O /dev/null http://servoni.eu/webtests/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from Prometeus, Bucharest, Romania: $promrom "
+promita=$( wget -O /dev/null http://webtests.100percent.info/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from Prometeus, Milan, Italy: $promita "
+mchcan=$( wget -O /dev/null http://198.50.209.250/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+echo "Download speed from MyCustomHosting, Beauharnois, Quebec, Canada: $mchcan "
 io=$( ( dd if=/dev/zero of=test_$$ bs=64k count=16k conv=fdatasync && rm -f test_$$ ) 2>&1 | awk -F, '{io=$NF} END { print io}' )
 echo "I/O speed : $io"

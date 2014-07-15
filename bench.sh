@@ -44,8 +44,6 @@ inetau=$( wget -O /dev/null http://ftp.iinet.net.au/test100MB.dat 2>&1 | awk '/\
 echo "Download speed from iiNet, Perth, WA, Australia: $inetau "
 mamvps=$( wget -O /dev/null http://www.mammothvpscustomer.com/test100MB.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from MammothVPS, Sydney, Australia: $mamvps "
-mamvps=$( wget -O /dev/null http://www.mammothvpscustomer.com/test100MB.dat 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-echo "Download speed from MammothVPS, Sydney, Australia: $mamvps "
 lwman=$( wget -O /dev/null http://mirror.us.leaseweb.net/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 echo "Download speed from Leaseweb, Manassas, VA, USA: $lwman "
 promrom=$( wget -O /dev/null http://servoni.eu/webtests/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
